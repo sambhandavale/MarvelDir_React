@@ -1,0 +1,38 @@
+.header{
+    width: 910px;
+    padding: 0 0 120px 80px;
+}
+
+.header .top_header{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -3.08px;
+    margin: 0 0 -40px 0;
+}
+
+.header .bottom_header{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -2.2px;
+    margin: 0;
+}
+
+.link_to_path{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -1.32px;
+    margin: 0;
+}
+
+.to_link{
+    padding: 0 0 130px 400px;
+}

@@ -1,24 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TopComponent from "../../components/layout/top";
 
 const NetflixShows = () => {
-  return (
-    <div className="netflix">
-      <div className="top_netflix">
-        <div className="header">
-          <p className="top_header">NETFLIX MARVEL SHOW</p>
-          <p className="bottom_header">IN ORDER</p>
+    const details = {
+        name:"netflix",
+        classname: "top_netflix",
+        top_header: "NETFLIX MARVEL SHOW",
+        bottom_header: "IN ORDER",
+        link_path:"https://www.netflix.com/in/title/80002566",
+        link_name:"NETFLIX"
+    };
+
+    return (
+        <div className="netflix">
+            <TopComponent details={details} />
         </div>
-        <div className="to_netflix">
-            <Link to="https://www.netflix.com/in/title/80002566">
-                <p className="link_to_netflix">
-                    WATCH ON <span class="highlight_netflix">NETFLIX</span>
-                </p>
-            </Link>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default NetflixShows;
