@@ -1,0 +1,106 @@
+.movies {
+    background: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.marvel_movies{
+    height: 533px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 1.87%, rgba(0, 0, 0, 0.00) 50.25%, rgba(0, 0, 0, 0.00) 59.25%, rgb(0, 0, 0) 100%), url(/assets/movies/movies_header_logo.jpg) lightgray 0px -26.5px / 109.875% 109.944% no-repeat;
+    background-size: cover;
+}
+
+
+.recent_movies {
+    background-color: rgb(8, 8, 8);;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 100px;
+    bottom: 120px;
+    padding: 20px 20px 0 20px;
+}
+
+.recent_movies .movie {
+    padding: 5px;
+    width: 280px;
+    height: 420px;
+}
+
+.recent_movies img {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 70%);
+    width: 100%;
+    object-fit: cover;
+}
+
+.divider{
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    font-family: Kanit;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 120px */
+    letter-spacing: -1.76px;
+    margin: 200px 0;
+}
+
+.p1{
+    background: url(/assets/movies/phase1/phase1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.p2{
+    background: url(/assets/movies/phase2/phase2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.p3{
+    background: url(/assets/movies/phase3/phase3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+
+.p4{
+    background: url(/assets/movies/phase4/phase4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.p5{
+    background: url(/assets/movies/phase5/phase5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.p6{
+    background: url(/assets/movies/phase6/phase6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movies_cat{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.movie_slides{
+    margin: 0 120px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+}

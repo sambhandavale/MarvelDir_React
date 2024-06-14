@@ -1,0 +1,56 @@
+/* Series Section */
+.series {
+    background-color: rgb(8, 8, 8); 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.top{
+    height: 940px;
+    flex-shrink: 0;
+}
+
+.shows{
+    height: 533px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 1.87%, rgba(0, 0, 0, 0.00) 50.25%, rgba(0, 0, 0, 0.00) 59.25%, rgb(8, 8, 8) 93%), url(/assets/series/series_header_logo.jpg) lightgray 0px -26.5px / 109.875% 109.944% no-repeat;
+    background-size: cover;
+}
+
+
+/* Netflix Shows */
+.netflix_shows {
+    background: url(/assets/series/netflix/the_defenders/the_defenders.jpg);
+    background-position: center calc(50% + 60px);
+}
+
+/* Disney Plus Shows */
+.disney_plus {
+    background: url(/assets/series/disney+/d+.jpg);
+    background-position: center calc(50%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Animated Shows */
+.animated_shows {
+    background: url(/assets/series/disney+/animated_series.jpg);
+    background-position: center calc(50% + 20px);
+}
+
+.disney_plus::before{
+    background: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .netflix_shows{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center calc(50% + 45px);
+    }
+}
+
