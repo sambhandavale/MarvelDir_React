@@ -1,0 +1,61 @@
+.netflix_shows {
+    background-color: rgb(0, 0, 0); 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.top{
+    height: 900px;
+    background: url(/assets/series/netflix/netflix_header.jpg) lightgray 0px -208.1px / 100% 162.578% no-repeat;
+    background-size: cover;
+    background-position: center calc(50% + 40px);
+    display: flex;
+    align-items: flex-end;
+} 
+
+.header{
+    width: 910px;
+    padding: 0 0 120px 80px;
+}
+
+.header .top_header{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -3.08px;
+    margin: 0;
+}
+
+.header .bottom_header{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -2.2px;
+    margin: 0;
+}
+
+.link_to_netflix{
+    color: #FFF;
+    font-family: "Alumni Sans";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -1.32px;
+    margin: 0;
+}
+
+.to_netflix{
+    padding: 0 0 130px 400px;
+}
+
+.highlight_netflix {
+    display: inline;
+    color: red;
+  }

@@ -3,7 +3,7 @@ import PageLayout from "../../components/layout/page_layout";
 
 const Series = () => {
   const details = [
-    { class_name: "netflix_shows", title: "NETFLIX SHOWS", to: "#" },
+    { class_name: "netflix_shows", title: "NETFLIX SHOWS", to: "/series/netflix" },
     { class_name: "disney_plus", title: "", to: "#" },
     { class_name: "animated_shows", title: "ANIMATED SHOWS", to: "#" }
   ];

@@ -21,28 +21,45 @@ const PageLayout = ({ details }) => {
   return (
     <div className={isMovies ? "movies" : isSeries ? "series" : ""}>
       <div className="top">
-        <div className={`intro_poster ${isMovies ? "marvel_movies" : isSeries ? "shows" : ""}`}></div>
+        <div
+          className={`intro_poster ${
+            isMovies ? "marvel_movies" : isSeries ? "shows" : ""
+          }`}
+        ></div>
         <div className="recent_movies">
           {isSeries &&
             disneyPlusSeries.series
               .filter(({ seriespage }) => seriespage === 1)
               .map(({ name, imagePath, infoLink }) => (
-                <FlipBoxHeader key={name} name={name} imagePath={imagePath} infoLink={infoLink} />
+                <FlipBoxHeader
+                  key={name}
+                  name={name}
+                  imagePath={imagePath}
+                  infoLink={infoLink}
+                />
               ))}
           {isMovies &&
-            allPhases.flatMap(phase =>
+            allPhases.flatMap((phase) =>
               phase.movies
                 .filter(({ moviepage }) => moviepage === 1)
                 .map(({ name, imagePath, infoLink }) => (
-                  <FlipBoxHeader key={name} name={name} imagePath={imagePath} infoLink={infoLink} />
+                  <FlipBoxHeader
+                    key={name}
+                    name={name}
+                    imagePath={imagePath}
+                    infoLink={infoLink}
+                  />
                 ))
             )}
         </div>
       </div>
       <div className="divider">PICK YOUR CHOICE</div>
-      <div className={`${isMovies ? "movie_slides" : ""} slide_show`}>
-        <SlideShow details={details} />
-      </div>
+      {isSeries && (
+        <div className="series_slides slide_show">
+          <SlideShow details={details} />
+        </div>
+      )}
+      
     </div>
   );
 };
