@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NetflixShows = () => {
   return (
     <div className="netflix">
-      <div className="top">
+      <div className="top_netflix">
         <div className="header">
           <p className="top_header">NETFLIX MARVEL SHOW</p>
           <p className="bottom_header">IN ORDER</p>
