@@ -1,0 +1,229 @@
+:root {
+    --white: #FFF;
+    --font-kanit: 'Kanit', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-size-small: 12px;
+    --font-size-medium: 18px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 50px;
+    --font-weight-normal: 400;
+    --font-weight-semi-bold: 600;
+    --line-height-normal: normal;
+    --bg-linear-gradient-daredevil: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 0, 0, 0.20) 0%, rgba(255, 0, 0, 0.20) 100%);
+    --bg-linear-gradient-jessica_jones: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(103, 0, 139, 0.20) 0%, rgba(103, 0, 139, 0.20) 100%);
+    --bg-linear-gradient-luke_cage:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 199, 0, 0.20) 0%, rgba(255, 199, 0, 0.20) 100%);
+    --bg-linear-gradient-iron_fist:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 229, 0, 0.20) 0%, rgba(255, 229, 0, 0.20) 100%);
+    --bg-linear-gradient-the_defenders:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(75, 75, 75, 0.20) 0%, rgba(75, 75, 75, 0.20) 100%);
+    --bg-linear-gradient-the_punisher:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+}
+
+.content {
+    background: var(--bg-linear-gradient), url(/assets/series/netflix/daredevil/poster.jpg) lightgray 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 860px;
+    align-items: center;
+    gap: 83.598px;
+}
+
+.information {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.main_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+}
+
+.content_header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.content_title {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-normal);
+}
+
+.genre_lang {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.genre,
+.lang {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+}
+
+.userscore {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percent {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    position: absolute;
+}
+
+.userscore_title {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-normal);
+}
+
+.content_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.no_of_seasons,
+.visit_option .watch_now,
+.write_review .read_more,
+.write_review .write_review_title {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+}
+
+.desc,
+.review_content {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    width: 520px;
+}
+
+.review_content{
+    width: 572px;
+    font-family: var(--font-inter);
+    font-size: var(--font-size-small);
+}
+
+.visit_option {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.trailer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.review_container {
+    width: 620px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.review_box {
+    display: flex;
+    padding: 12px 18px 18px 18px;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(9.3px);
+}
+
+.profile_rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 227px;
+}
+
+.line {
+    background-color: var(--white);
+    width: 583px;
+    height: 2px;
+}
+
+.review_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile_photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.333px solid var(--white);
+    background: url(/assets/components/default/karen.png) lightgray -7.125px -3.375px / 124.219% 209.983% no-repeat;
+}
+
+.user_name_date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user_name {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: 15.936px;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+}
+
+.review_date {
+    color: var(--white);
+    font-family: var(--font-kanit);
+    font-size: 8.964px;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+}
+
+.write_review {
+    display: flex;
+    align-items: flex-start;
+    gap: 266px;
+}
+
+.write_your_review {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

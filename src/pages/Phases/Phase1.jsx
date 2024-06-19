@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TopComponent from "../../components/layout/top";
+import TopComponent from "../../components/layout/top_component";
+import EntryTitle from "../../components/layout/entry_title";
 
 const Phase1 = () => {
     const details = {
@@ -15,6 +16,7 @@ const Phase1 = () => {
     return (
         <div className="phase1">
             <TopComponent details={details} />
+            <EntryTitle/>
         </div>
     );
 };

@@ -29,25 +29,25 @@ const PageLayout = ({ details }) => {
         <div className="recent_movies">
           {isSeries &&
             disneyPlusSeries.series
-              .filter(({ seriespage }) => seriespage === 1)
-              .map(({ name, imagePath, infoLink }) => (
+              .filter(({ series_page }) => series_page === 1)
+              .map(({ name, poster_link, info_link }) => (
                 <FlipBoxHeader
                   key={name}
                   name={name}
-                  imagePath={imagePath}
-                  infoLink={infoLink}
+                  imagePath={poster_link}
+                  infoLink={info_link}
                 />
               ))}
           {isMovies &&
             allPhases.flatMap((phase) =>
               phase.movies
                 .filter(({ moviepage }) => moviepage === 1)
-                .map(({ name, imagePath, infoLink }) => (
+                .map(({ name, poster_link, info_link }) => (
                   <FlipBoxHeader
                     key={name}
                     name={name}
-                    imagePath={imagePath}
-                    infoLink={infoLink}
+                    imagePath={poster_link}
+                    infoLink={info_link}
                   />
                 ))
             )}

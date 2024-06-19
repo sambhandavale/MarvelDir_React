@@ -1,0 +1,46 @@
+.poster_slideshow {
+    display: flex;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 67px;
+}
+
+.poster_slideshow .poster {
+    display: flex;
+    width: 146px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    transform-origin: center center; /* Set transform origin to center center */
+}
+
+.poster_slideshow .poster img {
+    width: 146px;
+    height: 216px;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.poster_slideshow .poster .poster_title {
+    color: #FFF;
+    font-family: Kanit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.352px;
+    transition: font-size 0.3s ease;
+}
+
+.poster_slideshow .grow > .poster {
+    transform: scale(1.1); 
+}
+
+.poster_slideshow .grow img {
+    width: calc(146px * 1.1); 
+    height: calc(216px * 1.1); 
+}
+
+.poster_slideshow .grow .poster_title {
+    font-size: 18px;
+}
