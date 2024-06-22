@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import marvelNetflixSeries from "../../data/series/netflix/marvel_netflix";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const PosterSlideShow = ({ series, setSeries }) => {
+const SlideShowPoster = ({ type, setType, slideData }) => {
     const [enlarge, setEnlarge] = useState(null);
+    const location = useLocation();
+    const path = location.pathname.split("/")[1];
+
+    console.log(slideData);
 
     const handleClick = (id) => {
         if (enlarge === id) {
             setEnlarge(null);
         } else {
-            setSeries(id);
+            setType(id);
             setEnlarge(id);
         }
     };
 
     return (
         <div className="poster_slideshow">
-            {marvelNetflixSeries.series.map((show) => (
+            {slideData.map((show) => (
                 <Link key={show.id} to="#" onClick={() => handleClick(show.id)}>
                     <div className={`poster1 poster ${show.id === enlarge ? "grow" : ""}`}>
-                        <img src={show.poster_link} alt={show.name} />
+                        <img src={path === "series" && `/assets/series/netflix/${show.title}/${show.title}.jpg` || path === "movies" && `/assets/movies/phase${show.phase}/${show.title}/${show.title}.jpg`} alt={show.name} />
                         <div className="poster_title">{show.name}</div>
                     </div>
                 </Link>
@@ -28,4 +31,4 @@ const PosterSlideShow = ({ series, setSeries }) => {
     );
 };
 
-export default PosterSlideShow;
+export default SlideShowPoster;

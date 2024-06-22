@@ -1,22 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SlideShow from "../slide_show";
 import FlipBoxHeader from "../flipbox_header";
-import disneyPlusSeries from "../../data/series/disney+/disney+";
 
-import phase1 from "../../data/movies/phase_movies/phase1";
-import phase2 from "../../data/movies/phase_movies/phase2";
-import phase3 from "../../data/movies/phase_movies/phase3";
-import phase4 from "../../data/movies/phase_movies/phase4";
-import phase5 from "../../data/movies/phase_movies/phase5";
-
-const allPhases = [phase1, phase2, phase3, phase4, phase5];
 
 const PageLayout = ({ details }) => {
   const { pathname: currentPath } = useLocation();
+  
+  const [loading, setLoading] = useState(true);
+  const [marvelMovies, setMovies] = useState([]); // to store the fetched data from API
+  const [marvelShows, setShows] = useState([]); // to store the fetched data from API
 
   const isMovies = currentPath === "/movies";
   const isSeries = currentPath === "/series";
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/api/movies');
+            if (!response.ok) {
+                throw new Error('Failed to fetch Movies');
+            }
+            const data = await response.json();
+            // console.log(data);
+            setMovies(data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching Movies:', error);
+            setLoading(false);
+        }
+    };
+
+    fetchMovies();
+  }, []);
+
+  useEffect(() => {
+    const fetchShows = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/api/shows');
+            if (!response.ok) {
+                throw new Error('Failed to fetch Shows');
+            }
+            const data = await response.json();
+            // console.log(data);
+            setShows(data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching Shows:', error);
+            setLoading(false);
+        }
+    };
+
+    fetchShows();
+  }, []);
+
+  console.log(marvelMovies);
 
   return (
     <div className={isMovies ? "movies" : isSeries ? "series" : ""}>
@@ -27,30 +65,37 @@ const PageLayout = ({ details }) => {
           }`}
         ></div>
         <div className="recent_movies">
-          {isSeries &&
-            disneyPlusSeries.series
-              .filter(({ series_page }) => series_page === 1)
-              .map(({ name, poster_link, info_link }) => (
-                <FlipBoxHeader
-                  key={name}
-                  name={name}
-                  imagePath={poster_link}
-                  infoLink={info_link}
-                />
-              ))}
-          {isMovies &&
-            allPhases.flatMap((phase) =>
-              phase.movies
-                .filter(({ moviepage }) => moviepage === 1)
-                .map(({ name, poster_link, info_link }) => (
-                  <FlipBoxHeader
-                    key={name}
-                    name={name}
-                    imagePath={poster_link}
-                    infoLink={info_link}
-                  />
-                ))
-            )}
+            {isSeries &&
+                marvelShows
+                  .filter(({ series_page }) => series_page === 1)
+                  .map(({ name, title, info_link, phase }) => {
+                    const poster_link = `/assets/series/disney+/${title}/${title}.jpg`;
+                    return (
+                      <FlipBoxHeader
+                        key={name}
+                        name={name}
+                        imagePath={poster_link}
+                        infoLink={info_link}
+                      />
+                    );
+                  })
+              }
+              {isMovies &&
+                marvelMovies
+                  .filter(({ movies_page }) => movies_page === 1)
+                  .map(({ name, title, info_link, phase }) => {
+                    const poster_link = `/assets/movies/phase${phase}/${title}/${title}.jpg`;
+
+                    return (
+                      <FlipBoxHeader
+                        key={name}
+                        name={name}
+                        imagePath={poster_link}
+                        infoLink={info_link}
+                      />
+                    );
+                  })
+              }
         </div>
       </div>
       <div className="divider">PICK YOUR CHOICE</div>

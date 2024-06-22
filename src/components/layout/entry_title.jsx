@@ -12,9 +12,14 @@ const EntryTitle = () => {
     },
     {
       title: "Phase where The Avengers Assembled for the First Time",
-      classname:"phase1_tag",
-      path: "/movies/phase1"
+      classname:"netflix_tag",
+      path: "/movies/phase/1"
     },
+    {
+      title: "Avengers realize thier main threat is not from earth",
+      classname:"netflix_tag",
+      path: "/movies/phase/2"
+    }
   ];
 
   const currentTitle = titles.find(item => item.path === location.pathname);

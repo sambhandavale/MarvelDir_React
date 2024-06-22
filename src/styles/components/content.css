@@ -9,20 +9,13 @@
     --font-weight-normal: 400;
     --font-weight-semi-bold: 600;
     --line-height-normal: normal;
-    --bg-linear-gradient-daredevil: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 0, 0, 0.20) 0%, rgba(255, 0, 0, 0.20) 100%);
-    --bg-linear-gradient-jessica_jones: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(103, 0, 139, 0.20) 0%, rgba(103, 0, 139, 0.20) 100%);
-    --bg-linear-gradient-luke_cage:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 199, 0, 0.20) 0%, rgba(255, 199, 0, 0.20) 100%);
-    --bg-linear-gradient-iron_fist:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(255, 229, 0, 0.20) 0%, rgba(255, 229, 0, 0.20) 100%);
-    --bg-linear-gradient-the_defenders:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(75, 75, 75, 0.20) 0%, rgba(75, 75, 75, 0.20) 100%);
-    --bg-linear-gradient-the_punisher:linear-gradient(270deg, rgba(0, 0, 0, 0.00) 3.06%, rgba(0, 0, 0, 0.00) 22.48%, rgba(0, 0, 0, 0.00) 51.86%, rgba(0, 0, 0, 0.00) 77.92%, #000 99.76%), linear-gradient(180deg, #000 1.22%, rgba(0, 0, 0, 0.00) 14.5%, rgba(0, 0, 0, 0.00) 39.11%, rgba(0, 0, 0, 0.00) 61.26%, #000 80.33%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
 }
 
 .content {
-    background: var(--bg-linear-gradient), url(/assets/series/netflix/daredevil/poster.jpg) lightgray 50% / cover no-repeat;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 860px;
+    height: 100%;
     align-items: center;
     gap: 83.598px;
 }
@@ -96,6 +89,20 @@
     font-family: var(--font-kanit);
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-normal);
+}
+
+.director_credit{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.director_credit .director,.creditscenes{
+    color: var(--white);
+    font-size: var(--font-size-large);
+    font-family: var(--font-kanit);
+    font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
 }
 

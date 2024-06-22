@@ -1,6 +1,7 @@
 const marvelNetflixSeries = {
     "series": [
         {
+            "type":"show",
             "title":"daredevil",
             "name": "Daredevil",
             "id": "netflix_daredevil_001",
@@ -24,6 +25,7 @@ const marvelNetflixSeries = {
             "info_link": "https://www.marvel.com/tv-shows/daredevil/1",
         },
         {
+            "type":"show",
             "title":"jessica_jones",
             "name": "Jessica Jones",
             "id": "netflix_jessica_jones_002",
@@ -47,6 +49,7 @@ const marvelNetflixSeries = {
             "info_link": "https://www.marvel.com/tv-shows/jessica-jones/1"
         },
         {
+            "type":"show",
             "title":"luke_cage",
             "name": "Luke Cage",
             "id": "netflix_luke_cage_003",
@@ -70,6 +73,7 @@ const marvelNetflixSeries = {
             "info_link": "https://www.marvel.com/tv-shows/marvels-luke-cage/1"
         },
         {
+            "type":"show",
             "title":"iron_fist",
             "name": "Iron Fist",
             "id": "netflix_iron_fist_004",
@@ -93,6 +97,7 @@ const marvelNetflixSeries = {
             "info_link": "https://www.marvel.com/tv-shows/marvels-iron-fist/1"
         },
         {
+            "type":"show",
             "title":"the_defenders",
             "name": "The Defenders",
             "id": "netflix_the_defenders_005",
@@ -116,6 +121,7 @@ const marvelNetflixSeries = {
             "info_link": "https://www.marvel.com/tv-shows/marvels-the-defenders/1"
         },
         {
+            "type":"show",
             "title":"the_punisher",
             "name": "The Punisher",
             "id": "netflix_the_punisher_006",
