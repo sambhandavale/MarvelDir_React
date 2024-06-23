@@ -95,6 +95,11 @@ footer .marvel_rights{
     border-radius: 50px;
     background: #FFF;
     border: 0;
+    font-family: Kanit;
+}
+
+.newsletter .email_newsletter:focus{
+    outline: none;
 }
 
 .newsletter > button{
@@ -106,6 +111,7 @@ footer .marvel_rights{
     background: #FFF;
     border: 0;
     cursor: pointer;
+    font-family: Kanit;
 }
 
 .extra_extra{
