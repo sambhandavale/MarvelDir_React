@@ -54,8 +54,6 @@ const PageLayout = ({ details }) => {
     fetchShows();
   }, []);
 
-  console.log(marvelMovies);
-
   return (
     <div className={isMovies ? "movies" : isSeries ? "series" : ""}>
       <div className="top">

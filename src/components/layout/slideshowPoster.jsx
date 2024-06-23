@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
-const SlideShowPoster = ({ type, setType, slideData }) => {
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const SlideShowPoster = ({ setType, slideData }) => {
     const [enlarge, setEnlarge] = useState(null);
     const location = useLocation();
     const path = location.pathname.split("/")[1];
@@ -11,7 +17,7 @@ const SlideShowPoster = ({ type, setType, slideData }) => {
     const handleClick = (id) => {
         if (enlarge === id) {
             setEnlarge(null);
-        } else {
+        } else { 
             setType(id);
             setEnlarge(id);
         }

@@ -46,6 +46,8 @@
     font-size: var(--font-size-xlarge);
     font-weight: var(--font-weight-semi-bold);
     line-height: var(--line-height-normal);
+    max-width: 700px; 
+    
 }
 
 .genre_lang {

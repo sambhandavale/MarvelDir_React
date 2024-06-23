@@ -19,8 +19,8 @@
 @import url(./styles/pages/Series/series.css);
 @import url(./styles/pages/NetflixShows/neflixshow.css);
 @import url(./styles/pages/Phases/phase1.css);
-
-
+@import url(./styles/pages/Phases/phase2.css);
+@import url(./styles/pages/Phases/phase3.css);
 
 body{
     margin: 0;

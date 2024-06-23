@@ -1,37 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import FlipBoxHeader from "../../components/flipbox_header";
 
-import phase1 from "../../data/movies/phase_movies/phase1";
-import phase2 from "../../data/movies/phase_movies/phase2";
-import phase3 from "../../data/movies/phase_movies/phase3";
-import phase4 from "../../data/movies/phase_movies/phase4";
-import phase5 from "../../data/movies/phase_movies/phase5";
+
 
 const Home = () =>{
-
-    const allPhases = [phase1, phase2, phase3, phase4, phase5];
-
     const location = useLocation();
     const currentPath = location.pathname;
+    const [marvelMovies, setMovies] = useState([]); // to store the fetched data from API
+    const [loading, setLoading] = useState(true);
+    
+    const isHome = currentPath === "/home" || currentPath === "/";
+
+    useEffect(() => {
+      const fetchMovies = async () => {
+          try {
+              const response = await fetch('http://localhost:3000/api/movies');
+              if (!response.ok) {
+                  throw new Error('Failed to fetch Movies');
+              }
+              const data = await response.json();
+              // console.log(data);
+              setMovies(data);
+              setLoading(false);
+          } catch (error) {
+              console.error('Error fetching Movies:', error);
+              setLoading(false);
+          }
+      };
+  
+      fetchMovies();
+    }, []);
+
+    console.log(marvelMovies);
+
     return(
         <div className="home">
             <div className="intro_poster">
                 <img src="/assets/home/home_header_logo.jpg" alt="Marvel Studios" />
             </div>
             <div className="upcoming_movies">
-                {allPhases.map(phase =>
-                  phase.movies
-                    .filter(movie => movie.homepage === 1)
-                    .map(movie => (
+            {isHome &&
+                marvelMovies
+                  .filter(({ homepage }) => homepage === 1)
+                  .map(({ name, title, info_link, phase }) => {
+                    const poster_link = `/assets/movies/phase${phase}/${title}/${title}.jpg`;
+                    return (
                       <FlipBoxHeader
-                        key={movie.name} 
-                        name={movie.name}
-                        imagePath={movie.imagePath}
-                        infoLink={movie.infoLink}
+                        key={name}
+                        name={name}
+                        imagePath={poster_link}
+                        infoLink={info_link}
                       />
-                    ))
-                )}
+                    );
+                  })
+              }
             </div>
         </div>
     );

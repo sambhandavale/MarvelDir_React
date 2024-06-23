@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SlideShowPoster from "../layout/slideshowPoster";
+import SlideShowPoster3 from "./slideshowPoster3";
 
 
 const Content = ({ data }) => {
@@ -10,7 +11,7 @@ const Content = ({ data }) => {
     const location = useLocation();
     const currentPath = location.pathname;
 
-    const isNetflix = currentPath === "/series/netflix";
+    const isNetflix = currentPath === "/series/netflix"; 
     const isMovie = currentPath.split("/")[1] === "movies";
 
     useEffect(() => {
@@ -110,7 +111,8 @@ const Content = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <SlideShowPoster type={idType} setType={setIdTpye} slideData={data}/>
+            {/* <SlideShowPoster setType={setIdTpye} slideData={data}/> */}
+            <SlideShowPoster3 setType={setIdTpye} slideData={data}/>
         </div>
     );
 };

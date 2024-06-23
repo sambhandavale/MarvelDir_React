@@ -19,14 +19,21 @@ const EntryTitle = () => {
       title: "Avengers realize thier main threat is not from earth",
       classname:"netflix_tag",
       path: "/movies/phase/2"
+    },
+    {
+      title: "Avengers came to together for the last time to end the infinity saga",
+      classname:"netflix_tag",
+      path: "/movies/phase/3"
     }
   ];
-
-  const currentTitle = titles.find(item => item.path === location.pathname);
+  
+    const currentTitle = titles.find(item => item.path === location.pathname);
 
   return (
     <div className="entry-title">
-      <p className={`${currentTitle.classname}`}>{currentTitle ? currentTitle.title : ""}</p>
+      <p className={`${currentTitle.classname}`}>
+        {currentTitle ? currentTitle.title : ""}
+      </p>
     </div>
   );
 };
