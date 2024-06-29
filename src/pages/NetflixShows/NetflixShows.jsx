@@ -20,7 +20,7 @@ const NetflixShows = () => {
     useEffect(() => {
         const fetchNetflixShows = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/shows/netflix');
+                const response = await fetch('https://marvel-api-mcu.vercel.app/api/shows/netflix');
                 if (!response.ok) {
                     throw new Error('Failed to fetch Netflix shows');
                 }

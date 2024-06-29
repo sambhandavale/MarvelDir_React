@@ -48,22 +48,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:black;
-    color:white;
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     transform:rotateY(180deg);
     z-index:4;
   }
   .back a{
-    color:white;
+    color:rgb(0, 0, 0);
     font-size:2em;
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
-    border:1px solid white;
+    border:2px solid rgb(0, 0, 0);
     padding:20px;
   }
   .back a:hover{
-    background:white;
-    color:black;
+    background:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
   }
   
   /*==============Flip box CSS End=================*/

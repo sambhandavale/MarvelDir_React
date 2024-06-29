@@ -31,7 +31,7 @@ const Phase = () => {
     useEffect(() => {
         const fetchMarvelMovies = async () => {
             try {
-                const route = `http://localhost:3000/api/movies/phase/${phase_no}`;
+                const route = `https://marvel-api-mcu.vercel.app/api/movies/phase/${phase_no}`;
                 const response = await fetch(route);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch Phase ${phase_no} Movies`);

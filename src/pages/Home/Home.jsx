@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import FlipBoxHeader from "../../components/flipbox_header";
+import "../../styles/pages/Home/home.css"
 
 
 
@@ -15,7 +16,7 @@ const Home = () =>{
     useEffect(() => {
       const fetchMovies = async () => {
           try {
-              const response = await fetch('http://localhost:3000/api/movies');
+              const response = await fetch('https://marvel-api-mcu.vercel.app/api/movies');
               if (!response.ok) {
                   throw new Error('Failed to fetch Movies');
               }
