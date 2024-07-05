@@ -96,7 +96,7 @@ const PageLayout = ({ details }) => {
               }
         </div>
       </div>
-      <div className="divider">PICK YOUR CHOICE</div>
+      <div className="divider">MARVEL STUDIOS PRESENTS</div>
       {isSeries && (
         <div className="series_slides slide_show">
           <SlideShow details={details} />

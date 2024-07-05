@@ -11,6 +11,7 @@
     align-items: center;
     transition: transform 0.3s ease, font-size 0.3s ease;
     transform-origin: center center;
+    width: 146px;
 }
 
 .poster_slideshow .poster img {
@@ -29,8 +30,6 @@
     letter-spacing: -0.352px;
     transition: font-size 0.3s ease;
     margin-top: 10px;
-    text-align: center;
-
     display: flex;
     align-items: flex-start;
 }
