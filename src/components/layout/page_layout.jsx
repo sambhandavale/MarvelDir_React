@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import SlideShow from "../slide_show";
 import FlipBoxHeader from "../flipbox_header";
 
 
-const PageLayout = ({ details }) => {
+const PageLayout = () => {
   const { pathname: currentPath } = useLocation();
   
   const [loading, setLoading] = useState(true);
@@ -46,7 +45,7 @@ const PageLayout = ({ details }) => {
             setShows(data);
             setLoading(false);
         } catch (error) {
-            console.error('Error fetching Shows:', error);
+            console.error('Error fetching Shows:', error); 
             setLoading(false);
         }
     };
@@ -55,7 +54,6 @@ const PageLayout = ({ details }) => {
   }, []);
 
   return (
-    <div className={isMovies ? "movies" : isSeries ? "series" : ""}>
       <div className="top">
         <div
           className={`intro_poster ${
@@ -96,14 +94,6 @@ const PageLayout = ({ details }) => {
               }
         </div>
       </div>
-      <div className="divider">MARVEL STUDIOS PRESENTS</div>
-      {isSeries && (
-        <div className="series_slides slide_show">
-          <SlideShow details={details} />
-        </div>
-      )}
-      
-    </div>
   );
 };
 

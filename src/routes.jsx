@@ -8,7 +8,6 @@ import Phase from "./pages/Phases/Phase";
 
 const routes = [
   { path: "/", element: <Home />, exact: true },
-  { path: "/home", element: <Home />, exact: true },
   { path: "/movies", element: <Movies /> },
   { path: "/series", element: <Series /> },
   { path: "/series/netflix", element: <NetflixShows /> },

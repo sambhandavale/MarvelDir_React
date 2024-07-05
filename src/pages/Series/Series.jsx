@@ -1,5 +1,6 @@
 import React from "react";
 import PageLayout from "../../components/layout/page_layout";
+import SlideShow from "../../components/slide_show";
 
 const Series = () => {
   const details = [
@@ -8,7 +9,16 @@ const Series = () => {
     { class_name: "animated_shows", title: "ANIMATED SHOWS", to: "#" }
   ];
 
-  return <PageLayout details={details} />;
+  return (
+    <div className="series">
+      <PageLayout />
+      <div className="divider">MARVEL STUDIOS PRESENTS</div>
+      <div className="series_slides slide_show">
+        <SlideShow details={details} />
+      </div>
+    </div>
+  );
+
 };
 
 export default Series;
