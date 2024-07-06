@@ -13,6 +13,7 @@
 @import url(./styles/components/entry_title.css);
 @import url(./styles/components/content.css);
 @import url(./styles/components/poster_slideshow.css);
+@import url(./styles/components/movies/saga_tile.css);
 
 @import url(./styles/pages/Home/home.css);
 @import url(./styles/pages/Movies/movies.css);

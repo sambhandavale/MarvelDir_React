@@ -154,6 +154,14 @@
     gap: 12px;
 }
 
+.trailer img{
+    transition: transform ease-in-out 0.3s;
+}
+
+.trailer:hover img{
+    transform: scale(1.1);
+}
+
 .review_container {
     width: 620px; 
     display: flex;
