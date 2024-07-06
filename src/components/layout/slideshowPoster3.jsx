@@ -10,6 +10,7 @@ const SlideShowPoster3 = ({ setType, slideData }) => {
     const [enlarge, setEnlarge] = useState(null);
     const location = useLocation();
     const path = location.pathname.split("/")[1];
+    const current_phase = parseInt(location.pathname.split("/")[3], 10);
 
     console.log(slideData);
 
@@ -22,13 +23,16 @@ const SlideShowPoster3 = ({ setType, slideData }) => {
         }
     };
 
+    const slidesPerView = current_phase === 6 ? 3 : 5.2;
+    const spaceBetween = current_phase === 6 ? 5 : 0;
+
     return (
         <div className="poster_slideshow">
             <Swiper
                 grabCursor
                 // centeredSlides
-                slidesPerView={4.5}
-                spaceBetween={0}  // Reduce space between slides
+                slidesPerView={slidesPerView}
+                spaceBetween={spaceBetween}
                 // loop
                 coverflowEffect={{
                     rotate: 0,
@@ -37,17 +41,17 @@ const SlideShowPoster3 = ({ setType, slideData }) => {
                     modifier: 1,
                 }}
             >
-            {slideData.map((show) => (
-                <SwiperSlide key={show.id}>
-                    <Link key={show.id} to="#" onClick={() => handleClick(show.id)}>
-                        <div className={`poster1 poster ${show.id === enlarge ? "grow" : ""}`}>
-                            <img src={path === "series" ? `/assets/series/netflix/${show.title}/${show.title}.jpg` : `/assets/movies/phase${show.phase}/${show.title}/${show.title}.jpg`} alt={show.name} />
-                            <div className="poster_title">{show.name}</div>
-                            <div className="poster_year poster_title">{path === "series" && show.series_duration || path === "movies" && show.year_of_release}</div>
-                        </div>
-                    </Link>
-                </SwiperSlide>
-            ))}
+                {slideData.map((show) => (
+                    <SwiperSlide key={show.id}>
+                        <Link key={show.id} to="#" onClick={() => handleClick(show.id)}>
+                            <div className={`poster1 poster ${show.id === enlarge ? "grow" : ""}`}>
+                                <img src={path === "series" ? `/assets/series/netflix/${show.title}/${show.title}.jpg` : `/assets/movies/phase${show.phase}/${show.title}/${show.title}.jpg`} alt={show.name} />
+                                <div className="poster_title">{show.name}</div>
+                                <div className="poster_year poster_title">{path === "series" ? show.series_duration : show.year_of_release}</div>
+                            </div>
+                        </Link>
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </div>
     );

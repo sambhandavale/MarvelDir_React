@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import SlideShowPoster from "../layout/slideshowPoster";
 import SlideShowPoster3 from "./slideshowPoster3";
-
 
 const Content = ({ data }) => {
     const [idType, setIdTpye] = useState(data[0].id); // for the selection of which show, its sent to poster slideshow which sets current show
     const [getType, setGetType] = useState(null); // to store the current show and display details for it accordingly below
     const [gradient, setGradient] = useState(data[0].title); // each show has different gradient
     const location = useLocation();
+    const avail_phases = [1, 2, 3, 4, 5, 6];
+    const current_phase = parseInt(location.pathname.split("/")[3], 10); // Correctly parse the phase number
     const currentPath = location.pathname;
 
     const isNetflix = currentPath === "/series/netflix"; 
@@ -25,11 +25,21 @@ const Content = ({ data }) => {
         }
     }, [data, idType]);
 
+    // Effect to update idType when phase changes
+    useEffect(() => {
+        if (isMovie) {
+            const firstShowInPhase = data.find(show => show.phase === current_phase);
+            if (firstShowInPhase) {
+                setIdTpye(firstShowInPhase.id);
+            }
+        }
+    }, [current_phase, isMovie, data]);
+
     if (!getType) {
         return <p>No show found.</p>;
     }
 
-    const svgArray = Array(5).fill(null); 
+    const svgArray = Array(5).fill(null);
 
     const backgroundStyleShows = {
         background: getType ? `var(--bg-linear-gradient-${gradient}), url(/assets/series/netflix/${getType.title}/poster.jpg) lightgray 50% / cover no-repeat` : ''
@@ -40,7 +50,7 @@ const Content = ({ data }) => {
     };
 
     return (
-        <div className="content" style={isNetflix && backgroundStyleShows || isMovie && backgroundStyleMovies}>       
+        <div className="content" style={isNetflix ? backgroundStyleShows : isMovie ? backgroundStyleMovies : {}}>       
             <div className="information" key={getType.id}>
                 <div className="main_info">
                     <div className="content_header">
@@ -60,13 +70,11 @@ const Content = ({ data }) => {
                         </div>
                     </div>
                     <div className="content_info">
-                        <div className="no_of_seasons">{isNetflix && `SEASONS: ${getType.no_of_seasons}` || isMovie && `${getType.movie_duration}`}</div>
-                        {
-                            <div className="director_credit">
-                                <div className="director">Director: {getType.director}</div>
-                                <div className="creditscenes">Credit Scenes: {getType.credit_scenes}</div>
-                            </div>
-                        }
+                        <div className="no_of_seasons">{isNetflix ? `SEASONS: ${getType.no_of_seasons}` : isMovie ? `${getType.movie_duration}` : ''}</div>
+                        <div className="director_credit">
+                            <div className="director">Director: {getType.director}</div>
+                            <div className="creditscenes">Credit Scenes: {getType.credit_scenes}</div>
+                        </div>
                         <div className="desc">{getType.description}</div>
                         <div className="visit_option">
                             <Link to={getType.watch_now_link}>
@@ -111,8 +119,27 @@ const Content = ({ data }) => {
                     </div>
                 </div>
             </div>
-            {/* <SlideShowPoster setType={setIdTpye} slideData={data}/> */}
             <SlideShowPoster3 setType={setIdTpye} slideData={data}/>
+            <div className="next_prev_phase">
+                {avail_phases.includes(current_phase - 1) ? (
+                    <Link to={`/movies/phase/${current_phase - 1}`}>
+                        <div className="prev_phase">
+                            <img src="/icons/components/prev.svg" alt="prev_icon" />
+                            <div className="next_prev_phase_tag">PHASE {current_phase - 1}</div>
+                        </div>
+                    </Link>
+                ) : <div></div>
+                }
+                {avail_phases.includes(current_phase + 1) ? (
+                    <Link to={`/movies/phase/${current_phase + 1}`}>
+                        <div className="next_phase">
+                            <div className="next_prev_phase_tag">PHASE {current_phase + 1}</div>
+                            <img src="/icons/components/next.svg" alt="next_icon" />
+                        </div>
+                    </Link>
+                ) : <div></div>
+                }
+            </div>
         </div>
     );
 };

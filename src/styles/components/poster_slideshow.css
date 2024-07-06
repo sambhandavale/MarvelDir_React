@@ -46,10 +46,6 @@
     height: calc(216px * 1.1); 
 }
 
-.poster_slideshow .grow .poster_title {
-    font-size: 18px;
-}
-
 .poster_year{
     margin: 0 !important;
     font-size: 12px !important;
