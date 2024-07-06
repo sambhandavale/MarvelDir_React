@@ -2,16 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 450px;
 }
 
 .poster_slideshow .poster {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Add this */
     transition: transform 0.3s ease, font-size 0.3s ease;
     transform-origin: center center;
     width: 146px;
+    height: 280px;
 }
 
 .poster_slideshow .poster img {
@@ -32,6 +34,7 @@
     margin-top: 10px;
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .poster_slideshow .grow {

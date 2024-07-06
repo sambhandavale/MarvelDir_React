@@ -24,6 +24,21 @@ const EntryTitle = () => {
       title: "Avengers came to together for the last time to end the infinity saga",
       classname:"netflix_tag",
       path: "/movies/phase/3"
+    },
+    {
+      title: "World has changed since the Blip and new Heroes have emerged",
+      classname:"netflix_tag",
+      path: "/movies/phase/4"
+    },
+    {
+      title: "The new Saga begins with a new threat who wants to conquer all time",
+      classname:"netflix_tag",
+      path: "/movies/phase/5"
+    },
+    {
+      title: "The Multiverse Saga coming to the end as the secret war beings",
+      classname:"netflix_tag",
+      path: "/movies/phase/6"
     }
   ];
   
