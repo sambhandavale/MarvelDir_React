@@ -47,7 +47,7 @@ const Phase = () => {
         };
 
         fetchMarvelMovies();
-    }, [phase_no, history]);
+    }, [phase_no]);
 
     if (loading) {
         return <p>Loading...</p>;
