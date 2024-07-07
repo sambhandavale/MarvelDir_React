@@ -242,7 +242,7 @@
 .write_your_review {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; 
 }
 
 .content .next_prev_phase{
@@ -258,17 +258,29 @@
     gap: 12px;
 }
 
+.content .prev_icon,.next_icon{
+    transition: transform ease-in-out 0.3s ;
+}
+
 .content .next_prev_phase_tag{
     color: #FFF;
     font-family: Kanit;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 42px */
+    line-height: 150%;
     letter-spacing: -0.616px;
 }
 
 .content .next_prev_phase img{
     width: 43.72px;
     height: 22.792px;
+}
+
+.content .prev_phase:hover .prev_icon{
+    transform: translateX(-8px);
+}
+
+.content .next_phase:hover .next_icon{
+    transform: translateX(8px);
 }

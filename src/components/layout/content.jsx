@@ -124,7 +124,7 @@ const Content = ({ data }) => {
                 {avail_phases.includes(current_phase - 1) ? (
                     <Link to={`/movies/phase/${current_phase - 1}`}>
                         <div className="prev_phase">
-                            <img src="/icons/components/prev.svg" alt="prev_icon" />
+                            <img src="/icons/components/prev.svg" alt="prev_icon" className="prev_icon"/>
                             <div className="next_prev_phase_tag">PHASE {current_phase - 1}</div>
                         </div>
                     </Link>
@@ -134,7 +134,7 @@ const Content = ({ data }) => {
                     <Link to={`/movies/phase/${current_phase + 1}`}>
                         <div className="next_phase">
                             <div className="next_prev_phase_tag">PHASE {current_phase + 1}</div>
-                            <img src="/icons/components/next.svg" alt="next_icon" />
+                            <img src="/icons/components/next.svg" alt="next_icon" className="next_icon"/>
                         </div>
                     </Link>
                 ) : <div></div>
