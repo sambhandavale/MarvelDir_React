@@ -42,6 +42,7 @@ const SlideShowPoster3 = ({ setType, slideData }) => {
     return (
         <div className="poster_slideshow">
             <Swiper
+                loop={currentPath === "/movies"}
                 grabCursor
                 slidesPerView={slidesPerView}
                 spaceBetween={spaceBetween}
