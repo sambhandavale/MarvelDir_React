@@ -99,7 +99,7 @@
     width: 1429px;
     align-items: flex-end;
     align-content: flex-end;
-    /* gap: 121px 73px; */
+    gap: 121px 73px;
     flex-wrap: wrap;
 }
 
@@ -113,6 +113,18 @@
 
     border-radius: 48px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/assets/movies/fox_studios/x_men/header.jpg) lightgray 50% / cover no-repeat;
+}
+
+.movies .other_fantastic_four{
+    display: flex;
+    padding: 26px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    border-radius: 48px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/assets/movies/fox_studios/fantastic_four/header.jpg) lightgray 50% / cover no-repeat;
 }
 
 .movies .other_info{
@@ -208,4 +220,66 @@
 
 .movies .poster_slideshow{
     height:auto;
+}
+
+.movies .lower_tile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:90px;
+}
+
+.movies .other_spider_man_and_more_bt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    width: 779px;
+}
+
+.movies .other_spider_man{
+    height: 725px;
+    align-self: stretch;
+
+    border-radius: 48px;
+    padding: 26px 52px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/assets/movies/sony_pictures/header.jpg) lightgray 50% / cover no-repeat;
+}
+
+.explore_more_bt{
+    display: flex;
+    height: 104px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
+    background: #FFF;
+
+    color: #000;
+    font-family: Kanit;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 48px */
+    letter-spacing: -0.704px;
+}
+
+.other_spider_man .other_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.other_spider_man .title_studios{
+    width: auto;
+}
+
+.other_spider_man .other_desc{
+    width: 650px;
+}
+
+.other_movies_container .other_posters img{
+    cursor: grab;
 }

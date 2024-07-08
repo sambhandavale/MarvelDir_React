@@ -24,19 +24,21 @@ const SlideShowPoster3 = ({ setType, slideData }) => {
 
     const getImageSrc = (show) => {
         const pathLength = currentPath.split("/").length;
-
         if (path === "series") {
             return `/assets/series/netflix/${show.title}/${show.title}.jpg`;
         } else if (path.includes("movies") && pathLength > 2) {
             return `/assets/movies/phase${show.phase}/${show.title}/${show.title}.jpg`;
         } else if (path.includes("movies") && pathLength === 2 && show.studios.includes("Fox Studios")) {
             return `/assets/movies/fox_studios/${show.version.split("-")[0]}/${show.title}/${show.title}.jpg`;
-        } else {
-            return ""; // Default or fallback image path if needed
+        } else if (path.includes("movies") && pathLength === 2 && show.studios.includes("Sony Pictures")) {
+            return `/assets/movies/sony_pictures/${show.version.split("-")[0]}/${show.title}/${show.title}.jpg`;
+        }else {
+            return "";
         }
     };
+    
 
-    const slidesPerView = current_phase === 6 || currentPath === "/movies" ? 3 : 5.2;
+    const slidesPerView = current_phase === 6 || currentPath === "/movies" ? 2.5 : 5.2;
     const spaceBetween = current_phase === 6 ? 5 : 2;
 
     return (
